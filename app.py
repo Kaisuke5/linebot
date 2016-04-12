@@ -17,22 +17,20 @@ def test():
 
 @app.route("/")
 def index():
-
-	return render_template("index.html",
-						   new_x=s+" (initial x)" , title=title)
+	result = {
+			"result": {
+				"data1": 1,
+				"data2": 2,
+			}
+	}
+	return jsonify(result = result)
 
 
 
 
 @app.route("/post",methods=['GET', 'POST'])
 def post():
-	result = {
-		"result": {
-			"data1": 1,
-			"data2": 2,
-		}
-	}
-	return jsonify(result = result)
+	return
 
 
 
